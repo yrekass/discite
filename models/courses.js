@@ -12,7 +12,25 @@ Schemas.course = new SimpleSchema({
         type: String,
         label: 'Description',
         max: 500
+    },
+    messages: {
+        type: Array,
+        optional: true
+    },
+    'messages.$': {
+        type: Object
+    },
+    'messages.$.userId': {
+        type: String
+    },
+    'messages.$.body': {
+        type: String
+    },
+
+    'messages.$.date': {
+        type: Date
     }
-});
+})
+;
 
 Courses.attachSchema(Schemas.course);

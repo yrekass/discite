@@ -1,0 +1,15 @@
+<template name="chatCourseTpl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{#each messages}}
+                <div style="{{#if me userId}}color:grey{{/if}}">
+                    <strong>{{userId}}</strong> : {{body}}
+                    <span class="pull-right">{{date}}</span>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+    <form>
+        <input class="form-control" name="body" title="body"/>
+    </form>
+</template>
