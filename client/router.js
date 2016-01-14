@@ -13,4 +13,6 @@ Router.route('/course/create/', function () {
 Router.route('/course/:_id', function () {
     var course = Courses.findOne({_id: this.params._id});
     this.render('courseTpl', {data: course});
-},{name: 'course.view'});
+}, {
+    name: 'course.view'
+});
