@@ -26,3 +26,7 @@ check
 less
 accounts-password
 ian:accounts-ui-bootstrap-3
+cfs:standard-packages
+cfs:filesystem
+cfs:upload-http
+cfs:ui
