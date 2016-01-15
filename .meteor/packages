@@ -31,3 +31,4 @@ cfs:filesystem
 cfs:upload-http
 cfs:ui
 matb33:collection-hooks
+angel1411:rtcmulticonnection

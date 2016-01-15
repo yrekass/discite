@@ -16,3 +16,19 @@ Router.route('/course/:_id', function () {
 }, {
     name: 'course.view'
 });
+
+
+Router.route('/conference/list/', function () {
+    this.render('conferenceListTpl');
+});
+
+Router.route('/conference/create/', function () {
+    this.render('conferenceCreateTpl');
+});
+
+Router.route('/conference/:_id', function () {
+    var conference = Conferences.findOne({_id: this.params._id});
+    this.render('conferenceTpl', {data: conference});
+}, {
+    name: 'conference.view'
+});

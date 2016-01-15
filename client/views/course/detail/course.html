@@ -1,8 +1,10 @@
 <template name="courseTpl">
     <div class="container">
         {{#if name}}
-            <h3>{{name}}</h3>
-            <p>{{description}}</p>
+            <div class="jumbotron center">
+                <h3>{{name}}</h3>
+                <p>{{description}}</p>
+            </div>
             <ul class="nav nav-tabs">
                 <li role="presentation"><a href="#chat" role="tab" data-toggle="tab">Chat</a></li>
                 <li role="presentation"><a href="#files" role="tab" data-toggle="tab">Files</a></li>
@@ -12,7 +14,7 @@
 
             <div class="tab-content">
                 <br>
-                <div class="tab-pane active" id="chat">
+                <div class="tab-pane" id="chat">
                     {{>chatCourseTpl}}
                 </div>
                 <div class="tab-pane" id="files">

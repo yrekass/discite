@@ -1,7 +1,5 @@
 Courses = new Mongo.Collection('courses');
 
-Schemas = {};
-
 Courses.before.insert(function (userId, course) {
     course.userId = Meteor.userId();
     course.createdAt = new Date();
