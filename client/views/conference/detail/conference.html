@@ -4,5 +4,12 @@
             <h3>{{name}}</h3>
             <p>{{description}}</p>
         </div>
+        {{#if isMine userId}}
+            <button id='launch' class="btn btn-primary">Launch conference</button>
+        {{else}}
+            <button id='participate' class="btn btn-primary">Participate conference</button>
+        {{/if}}
+
+        <div id="stream"></div>
     </div>
 </template>
