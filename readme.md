@@ -16,3 +16,4 @@
 - [aldeed:autoform](http://autoform.meteor.com/)
 - [accounts-password](https://www.meteor.com/accounts)
 - [cfs:*](https://github.com/CollectionFS/Meteor-CollectionFS)
+- [angel1411:rtcmulticonnection](https://atmospherejs.com/angel1411/rtcmulticonnection)
