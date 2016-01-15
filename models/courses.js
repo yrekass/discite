@@ -2,6 +2,11 @@ Courses = new Mongo.Collection('courses');
 
 Schemas = {};
 
+Courses.before.insert(function (userId, course) {
+    course.userId = Meteor.userId();
+    course.createdAt = new Date();
+});
+
 Schemas.course = new SimpleSchema({
     name: {
         type: String,
@@ -12,6 +17,12 @@ Schemas.course = new SimpleSchema({
         type: String,
         label: 'Description',
         max: 500
+    },
+    userId: {
+        type: String
+    },
+    createdAt:{
+        type: Date
     },
     messages: {
         type: Array,
@@ -30,7 +41,6 @@ Schemas.course = new SimpleSchema({
     'messages.$.date': {
         type: Date
     }
-})
-;
+});
 
 Courses.attachSchema(Schemas.course);
