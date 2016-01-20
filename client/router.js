@@ -4,6 +4,7 @@ Router.route('/', function () {
 
 Router.route('/course/list/', function () {
     this.render('courseListTpl');
+    //TODO: waitOn...
 });
 
 Router.route('/course/create/', function () {
