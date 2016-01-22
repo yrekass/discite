@@ -1,14 +1,19 @@
 Meteor.Schema = Meteor.Schema || {};
 
 Meteor.Schema.UserProfile = new SimpleSchema({
+    username: {
+        type: String,
+        label: 'Username'
+    },
     firstName: {
         type: String,
-        label: 'First Name'
+        label: 'FirstName',
+        optional: true
     },
     lastName: {
         type: String,
-        label: 'Last Name',
-        optional: true
+        label: 'LastName',
+        optional:true
     }
 });
 
