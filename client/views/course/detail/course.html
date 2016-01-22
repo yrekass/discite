@@ -1,30 +1,31 @@
 <template name="courseTpl">
     <div class="container">
         {{#if name}}
-            <div class="jumbotron center">
+            <div class="col-md-2 jumbotron">
                 <h3>{{name}}</h3>
                 <p>{{description}}</p>
             </div>
-            <ul class="nav nav-tabs">
-                <li role="presentation"><a href="#chat" role="tab" data-toggle="tab">Chat</a></li>
-                <li role="presentation"><a href="#files" role="tab" data-toggle="tab">Files</a></li>
-                <li role="presentation"><a href="#videos" role="tab" data-toggle="tab">Videos</a></li>
-                <li role="presentation"><a href="#support" role="tab" data-toggle="tab">Support</a></li>
-            </ul>
-
-            <div class="tab-content">
-                <br>
-                <div class="tab-pane" id="chat">
-                    {{>chatCourseTpl}}
-                </div>
-                <div class="tab-pane" id="files">
-                    {{>uploadCourseTpl}}
-                </div>
-                <div class="tab-pane" id="videos">
-                    <h1>Videos</h1>
-                </div>
-                <div class="tab-pane" id="support">
-                    <h1>Support</h1>
+            <div class="col-md-10">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="#chat" role="tab" data-toggle="tab">Chat</a></li>
+                    <li role="presentation"><a href="#files" role="tab" data-toggle="tab">Files</a></li>
+                    <li role="presentation"><a href="#videos" role="tab" data-toggle="tab">Videos</a></li>
+                    <li role="presentation"><a href="#support" role="tab" data-toggle="tab">Support</a></li>
+                </ul>
+                <div class="tab-content">
+                    <br>
+                    <div class="tab-pane" id="chat">
+                        {{>chatCourseTpl}}
+                    </div>
+                    <div class="tab-pane" id="files">
+                        {{>uploadCourseTpl}}
+                    </div>
+                    <div class="tab-pane" id="videos">
+                        <h1>Videos</h1>
+                    </div>
+                    <div class="tab-pane" id="support">
+                        <h1>Support</h1>
+                    </div>
                 </div>
             </div>
         {{else}}

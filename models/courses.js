@@ -37,45 +37,8 @@ Schemas.course = new SimpleSchema({
     },
     'messages.$.date': {
         type: Date
-    },
-    //todo:edit model
-    'quizz': {
-        optional: true,
-        type: Array
-    },
-    'quizz.$': {
-        type: Object
-    },
-    'quizz.$.question': {
-        type: String
-    },
-    'quizz.$.answer': {
-        type: Object
-    },
-    'quizz.$.answer.userId': {
-        type: String
-    },
-    'quizz.$.answers.$':{
-        type: Array
-    },
-    'quizz.$.answers.$.choice': {
-        type: Object
-    },
-    'quizz.$.answers.$.choice.isAnswer': {
-        type: Boolean
-    },
-    'quizz.$.answers.$.choice.body': {
-        type: String
-    },
-    'quizz.$.choices': {
-        type: Array
-    },
-    'quizz.$.choices.$.isAnswer': {
-        type: Boolean
-    },
-    'quizz.$.choices.$.body': {
-        type: String
     }
+    //todo:edit model
 });
 
 Courses.attachSchema(Schemas.course);
