@@ -14,9 +14,16 @@
                         <p>{{description}}</p>
                         <p>{{createdAt}}</p>
                         <p>{{userId}}</p>
-                        <a href="{{urlFor route='course.view' _id=_id}}" class="pull-right btn btn-primary">view</a>
+                        <div class="btn-group pull-right">
+                            <a href="{{urlFor route='course.view' _id=_id}}" class="btn btn-primary">view</a>
+                            {{>btnParticipate courseId=_id}}
+                        </div>
                     </div>
                 </div>
             {{/each}}
         </div>
+</template>
+
+<template name="btnParticipate">
+    <button class="btn btn-primary" id="participateBtn">Participate</button>
 </template>
