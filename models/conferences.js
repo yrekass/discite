@@ -5,6 +5,12 @@ Conferences.before.insert(function (userId, doc) {
     doc.createdAt = new Date();
 });
 
+if (Meteor.isClient) {
+    Conferences.after.insert(()=> {
+        Router.go('/conference/list');
+    });
+}
+
 Schemas.conference = new SimpleSchema({
     name: {
         type: String,

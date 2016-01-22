@@ -5,6 +5,12 @@ Courses.before.insert(function (userId, course) {
     course.createdAt = new Date();
 });
 
+if (Meteor.isClient) {
+    Courses.after.insert(()=> {
+        Router.go('/course/list');
+    });
+}
+
 Schemas.course = new SimpleSchema({
     name: {
         type: String,
