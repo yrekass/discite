@@ -15,10 +15,9 @@ Meteor.Schema.UserProfile = new SimpleSchema({
         label: 'LastName',
         optional:true
     },
-    myCourses:{
+    myCourses: {
         type: Array,
-        label: 'myCourse',
-        unique: true
+        label: 'myCourse'
     },
     'myCourses.$':{
         type: String
