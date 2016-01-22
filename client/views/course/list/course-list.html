@@ -1,17 +1,22 @@
 <template name="courseListTpl">
     <div class="container">
-        {{#each courses}}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">{{name}}</h3>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a id="allCourses" role="tab" data-toggle="tab">All</a></li>
+            <li role="presentation"><a id="myCourses" role="tab" data-toggle="tab">Participate</a></li>
+        </ul>
+        <br>
+            {{#each courses}}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{name}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>{{description}}</p>
+                        <p>{{createdAt}}</p>
+                        <p>{{userId}}</p>
+                        <a href="{{urlFor route='course.view' _id=_id}}" class="pull-right btn btn-primary">view</a>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <p>{{description}}</p>
-                    <p>{{createdAt}}</p>
-                    <p>{{userId}}</p>
-                    <a href="{{urlFor route='course.view' _id=_id}}" class="pull-right btn btn-primary">view</a>
-                </div>
-            </div>
-        {{/each}}
-    </div>
+            {{/each}}
+        </div>
 </template>
