@@ -17,3 +17,4 @@
 - [accounts-password](https://www.meteor.com/accounts)
 - [cfs:*](https://github.com/CollectionFS/Meteor-CollectionFS)
 - [angel1411:rtcmulticonnection](https://atmospherejs.com/angel1411/rtcmulticonnection)
+- [meteorhacks:subs-manager](https://github.com/kadirahq/subs-manager)

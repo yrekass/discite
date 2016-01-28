@@ -5,10 +5,8 @@ Template.courseListTpl.helpers({
 });
 
 Template.courseListTpl.rendered = function () {
-    Deps.autorun(function () {
-        console.log('> Subscribe all courses');
-        Meteor.subscribe('courses');
-    });
+    console.log('> Subscribe all courses');
+    CoursesSubsManager.subscribe('courses');
 
     setTimeout(()=> {
         $('#allCourses').tab('show');
@@ -16,14 +14,18 @@ Template.courseListTpl.rendered = function () {
 };
 
 Template.courseListTpl.events({
-    'click #participateBtn': function(){
+    'click #participateBtn': function () {
         console.log(`Participate to : ${this.courseId}`);
-        Meteor.call('participateCourse', this.courseId);
+        Meteor.call('participate', this.courseId);
     },
-    'click #myCourses': function(){
-        Deps.autorun(function () {
-            console.log('> Subscribe myCourses');
-            Meteor.subscribe('myCourses');
-        });
+    'click #myCourses': function () {
+        console.log('> Subscribe myCourses');
+        CoursesSubsManager.clear();
+        CoursesSubsManager.subscribe('myCourses');
+    },
+    'click #allCourses': function() {
+        console.log('> Subscribe all courses');
+        CoursesSubsManager.clear();
+        CoursesSubsManager.subscribe('courses');
     }
 });

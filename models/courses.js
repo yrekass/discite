@@ -1,5 +1,7 @@
 Courses = new Mongo.Collection('courses');
 
+CoursesSubsManager = new SubsManager();
+
 Courses.before.insert(function (userId, course) {
     course.userId = Meteor.userId();
     course.createdAt = new Date();
@@ -43,6 +45,12 @@ Schemas.course = new SimpleSchema({
     },
     'messages.$.date': {
         type: Date
+    },
+    'participants': {
+        type: Array
+    },
+    'participants.$': {
+        type: String
     }
     //todo:edit model
 });
