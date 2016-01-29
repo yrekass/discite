@@ -47,7 +47,8 @@ Schemas.course = new SimpleSchema({
         type: Date
     },
     'participants': {
-        type: Array
+        type: Array,
+        optional:true
     },
     'participants.$': {
         type: String
