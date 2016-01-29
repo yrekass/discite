@@ -1,0 +1,93 @@
+#streamScreen, #streamCam
+{
+  position:absolute;
+}
+
+#streamScreen
+{
+  top:0;
+  width: 100%;
+}
+
+#streamCam
+{
+  top:0;
+  right:0;
+  width: 150px;
+  height: 100px;
+}
+
+#streamScreen video:first-child
+{
+  width:inherit;
+}
+
+#streamCam video:first-child
+{
+  width:inherit;
+}
+
+#stream
+{
+  position:relative;
+  display:block;
+  width:100%;
+}
+
+.conference .chat
+{
+  height:100%;
+}
+
+.chat .panel
+{
+  height:400px;
+  overflow-y:scroll;
+  overlow-x:auto;
+  word-wrap:break-word;
+}
+
+.right
+{
+  float:right;
+}
+
+
+.left
+{
+  float:left;
+}
+
+.panel-body img
+{
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+.inputfile-1 + label {
+  background-color: #286090;
+  color: #fff;
+  fill: #fff;
+}
+.inputfile + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;
+  text-align:center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inputfile {
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 0.1px;
+  z-index: -1;
+}

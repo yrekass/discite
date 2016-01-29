@@ -27,6 +27,33 @@ Schemas.conference = new SimpleSchema({
     },
     createdAt: {
         type: Date
+    },
+    messages: {
+        type: Array,
+        optional: true
+    },
+    'messages.$': {
+        type: Object
+    },
+    'messages.$.userId': {
+        type: String
+    },
+    'messages.$.date': {
+        type: Date
+    },
+    'messages.$.body': {
+        type: String
+    },
+    'messages.$.type':{
+        type: String
+    },
+    'messages.$.fileURL':{
+        type:String,
+        optional:true
+    },
+    'messages.$.fileName':{
+        type:String,
+        optional:true
     }
 });
 

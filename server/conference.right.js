@@ -1,6 +1,6 @@
 Conferences.allow({
     insert: (userId) => {
-        return userId;
+        return !!userId;
     },
     update: (userId) => {
         return !!userId;
