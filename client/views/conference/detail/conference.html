@@ -1,15 +1,25 @@
 <template name="conferenceTpl">
-    <div class="container">
+    <div class="container conference">
         <div class="jumbotron center">
             <h3>{{name}}</h3>
             <p>{{description}}</p>
         </div>
-        {{#if isMine userId}}
-            <button id='launch' class="btn btn-primary">Launch conference</button>
-        {{else}}
-            <button id='participate' class="btn btn-primary">Participate conference</button>
-        {{/if}}
 
-        <div id="stream"></div>
+        <div class="row">
+            <div class="left col-md-8">
+                <div id="stream">
+                    <div id="streamScreen"></div>
+                    <div id="streamCam"></div>
+                </div>
+            </div>
+            <div class="right col-md-4">
+                {{#if isMine userId}}
+                    <button id='launch' class="btn btn-block btn-primary">Launch conference</button>
+                {{else}}
+                    <button id='participate' class="btn btn-block btn-primary">Participate conference</button>
+                {{/if}}
+                {{>chatConferenceTpl}}
+            </div>
+        </div>
     </div>
 </template>
