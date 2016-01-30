@@ -1,3 +1,6 @@
+/**
+ * Collections files actions rigths
+ */
 Files.allow({
     insert: (userId) => {
         return !!userId;

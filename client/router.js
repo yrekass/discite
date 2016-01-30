@@ -1,3 +1,6 @@
+/**
+ * Client routing
+ */
 Router.route('/', function () {
     this.render('homepageTpl');
 });

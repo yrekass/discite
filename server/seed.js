@@ -1,3 +1,6 @@
+/**
+ * Insert a default user in database
+ */
 Meteor.startup(() => {
     let username = 'Admin';
     let emailUser = 'admin@test.fr';

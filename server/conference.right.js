@@ -1,3 +1,6 @@
+/**
+ * Collections conferences actions rigths
+ */
 Conferences.allow({
     insert: (userId) => {
         return !!userId;

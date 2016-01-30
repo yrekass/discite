@@ -1,5 +1,10 @@
 Meteor.Schema = Meteor.Schema || {};
 
+/**
+ * User schema
+ * Create in order to override meteor Account schema
+ * @type {SimpleSchema}
+ */
 Meteor.Schema.UserProfile = new SimpleSchema({
     username: {
         type: String,

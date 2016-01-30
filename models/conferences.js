@@ -1,16 +1,32 @@
+/**
+ * Global conferences collection
+ * @type {FS.Collection}
+ */
 Conferences = new Meteor.Collection('conferences');
 
+/**
+ * Add fields before insert in collection
+ */
 Conferences.before.insert(function (userId, doc) {
     doc.userId = Meteor.userId();
     doc.createdAt = new Date();
 });
 
+/**
+ * Redirect after insert
+ * Only for client
+ */
 if (Meteor.isClient) {
     Conferences.after.insert(()=> {
         Router.go('/conference/list');
     });
 }
 
+/**
+ * Define conference schema
+ * this is use with autoform to generate forms
+ * @type {SimpleSchema}
+ */
 Schemas.conference = new SimpleSchema({
     name: {
         type: String,

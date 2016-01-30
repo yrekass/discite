@@ -3,6 +3,13 @@ const MESSAGE_TEXT = 'text';
 const MESSAGE_IMAGE_FILE = 'image_file';
 
 Meteor.methods({
+    /**
+     * Send a message from component (course or conference) to a collection
+     * @param id
+     * @param body
+     * @param extra
+     * @param collection
+     */
     sendMessage: function (id, body, extra, collection) {
         var message = {};
         message.body = body;

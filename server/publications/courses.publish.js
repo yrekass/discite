@@ -1,11 +1,24 @@
+/**
+ * Publish all courses
+ * Must subscribe in client for access
+ */
 Meteor.publish('courses', () => {
     return Courses.find({});
 });
 
-Meteor.publish('course', (id) => {
-    return Courses.find({_id: id});
+/**
+ * Publish a course
+ * Must subscribe in client for access
+ * @param _id => IdCourse
+ */
+Meteor.publish('course', (_id) => {
+    return Courses.find({_id});
 });
 
+/**
+ * Publish all courses joined by currentUser logged
+ * Must subscribe in client for access
+ */
 Meteor.publish('myCourses', () => {
     return Courses.find({participants:{$in: [this.userId]}});
 });

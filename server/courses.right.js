@@ -1,3 +1,6 @@
+/**
+ * Collections courses actions rigths
+ */
 Courses.allow({
     insert: (userId) => {
         return !!userId;
