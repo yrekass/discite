@@ -2,12 +2,11 @@ Template.courseListTpl.helpers({
     courses: function () {
         return Courses.find();
     },
-    meParticipate: function (id) {
+    displayBtnParticipate: function (id) {
         var me = Meteor.userId();
         var course = Courses.findOne({_id: id.hash.id});
         if (course.participants === undefined) {
-            console.log('return false', id);
-            return false;
+            return true;
         } else {
             return course.participants.indexOf(me) === -1;
         }
@@ -31,7 +30,7 @@ Template.courseListTpl.events({
     'click #myCourses': function () {
         console.log('> Subscribe myCourses');
         CoursesSubsManager.clear();
-        CoursesSubsManager.subscribe('myCourses');
+        CoursesSubsManager.subscribe('myCourses', Meteor.userId);
     },
     'click #allCourses': function () {
         console.log('> Subscribe all courses');

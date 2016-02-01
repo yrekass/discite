@@ -19,6 +19,6 @@ Meteor.publish('course', (_id) => {
  * Publish all courses joined by currentUser logged
  * Must subscribe in client for access
  */
-Meteor.publish('myCourses', () => {
+Meteor.publish('myCourses', function() {
     return Courses.find({participants:{$in: [this.userId]}});
 });

@@ -16,7 +16,7 @@
                     <p>{{userId}}</p>
                     <div class="btn-group pull-right">
                         <a href="{{urlFor route='course.view' _id=_id}}" class="btn btn-primary">view</a>
-                        {{#if meParticipate id=_id}}
+                        {{#if displayBtnParticipate id=_id}}
                             {{>btnParticipate courseId=_id}}
                         {{/if}}
                     </div>

@@ -5,6 +5,8 @@ Router.route('/', function () {
     this.render('homepageTpl');
 });
 
+Router.route('/login');
+
 Router.route('/course/list/', function () {
     this.render('courseListTpl');
     //TODO: waitOn...
@@ -36,3 +38,13 @@ Router.route('/conference/:_id', function () {
 }, {
     name: 'conference.view'
 });
+/**
+ * Redirect if not login
+ */
+Router.onBeforeAction(function() {
+    if (!Meteor.user() && this.ready()){
+        return this.redirect('/login');
+    } else {
+        this.next();
+    }
+}, {except: ['login']});
