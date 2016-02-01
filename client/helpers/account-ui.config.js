@@ -1,3 +1,6 @@
+/**
+ * Extend account ui for signin
+ */
 Accounts.ui.config({
     requestPermissions: {},
 

@@ -1,3 +1,6 @@
+/**
+ * Handlebars helper to display username
+ */
 Handlebars.registerHelper('username', function(user){
     if (!user)
         return;

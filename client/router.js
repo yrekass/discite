@@ -38,6 +38,7 @@ Router.route('/conference/:_id', function () {
 }, {
     name: 'conference.view'
 });
+
 /**
  * Redirect if not login
  */
