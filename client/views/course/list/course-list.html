@@ -5,23 +5,25 @@
             <li role="presentation"><a id="myCourses" role="tab" data-toggle="tab">Participate</a></li>
         </ul>
         <br>
-            {{#each courses}}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">{{name}}</h3>
-                    </div>
-                    <div class="panel-body">
-                        <p>{{description}}</p>
-                        <p>{{createdAt}}</p>
-                        <p>{{userId}}</p>
-                        <div class="btn-group pull-right">
-                            <a href="{{urlFor route='course.view' _id=_id}}" class="btn btn-primary">view</a>
+        {{#each courses}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{name}}</h3>
+                </div>
+                <div class="panel-body">
+                    <p>{{description}}</p>
+                    <p>{{createdAt}}</p>
+                    <p>{{userId}}</p>
+                    <div class="btn-group pull-right">
+                        <a href="{{urlFor route='course.view' _id=_id}}" class="btn btn-primary">view</a>
+                        {{#if meParticipate id=_id}}
                             {{>btnParticipate courseId=_id}}
-                        </div>
+                        {{/if}}
                     </div>
                 </div>
-            {{/each}}
-        </div>
+            </div>
+        {{/each}}
+    </div>
 </template>
 
 <template name="btnParticipate">
