@@ -1,10 +1,12 @@
 #discite
 
+E-learning platform poc in meteor.
+
 ##stack
 
 - [Meteor](http://meteor.com)
 
-##package
+##packages
 
 - [check](https://atmospherejs.com/meteor/check)
 - [twbs:bootstrap](https://atmospherejs.com/twbs/bootstrap)
@@ -18,3 +20,7 @@
 - [cfs:*](https://github.com/CollectionFS/Meteor-CollectionFS)
 - [angel1411:rtcmulticonnection](https://atmospherejs.com/angel1411/rtcmulticonnection)
 - [meteorhacks:subs-manager](https://github.com/kadirahq/subs-manager)
+
+##participate
+
+You can fork and pullrequest, please use git-flow 
