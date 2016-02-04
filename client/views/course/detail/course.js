@@ -6,3 +6,9 @@ Template.courseTpl.rendered = function () {
         $('#first').tab('show');
     }, 200);
 };
+
+Template.courseTpl.helpers({
+    idCourse: function() {
+        return Router.current().params._id;
+    }
+});
