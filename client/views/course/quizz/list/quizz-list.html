@@ -1,0 +1,11 @@
+<template name="quizzListTpl">
+    <div class="container">
+        {{#each quizzs}}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p>{{name}}</p> <a href="{{urlFor route='quizz.view' _id=_id}}" class="pull-right btn btn-primary">Passer</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</template>

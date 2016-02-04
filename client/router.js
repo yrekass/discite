@@ -49,3 +49,20 @@ Router.onBeforeAction(function() {
         this.next();
     }
 }, {except: ['login']});
+
+Router.route('/quizz/create/:idCourse', function () {
+    this.render('quizzCreateTpl');
+}, {
+        name: 'quizz.create'
+});
+
+Router.route('/quizz/list/', function () {
+    this.render('quizzListTpl');
+});
+
+Router.route('/quizz/:_id', function () {
+    var quizz = Quizzs.findOne({_id: this.params._id});
+    this.render('quizzTpl', {data: quizz});
+}, {
+    name: 'quizz.view'
+});
