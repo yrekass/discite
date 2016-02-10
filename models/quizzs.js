@@ -5,10 +5,11 @@ Quizzs.before.insert(function (userId, quizz) {
     quizz.createdAt = new Date();
 });
 //to do : il faut stocker l'id cours aussi
-if(Meteor.isClient){
-    Quizzs.before.insert(function(userId, quizz){
-        quizz.idCourse = Router.current().params.id;
-    })
+
+if (Meteor.isClient) {
+    Quizzs.after.insert(()=> {
+        Router.go('/quizz/list');
+    });
 }
 
 Schemas.quizz = new SimpleSchema({
