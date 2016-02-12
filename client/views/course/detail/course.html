@@ -1,16 +1,15 @@
 <template name="courseTpl">
     <div class="container">
         {{#if name}}
-            <div class="col-md-4 jumbotron">
-                <h3>{{name}}</h3>
-                <p>{{description}}</p>
-            </div>
-            <div class="col-md-8">
+            <div>
+                <div class="center">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                </div>
+                <hr>
                 <ul class="nav nav-tabs">
                     <li role="presentation"><a id="first" href="#chat" role="tab" data-toggle="tab">Chat</a></li>
                     <li role="presentation"><a href="#files" role="tab" data-toggle="tab">Files</a></li>
-                    <li role="presentation"><a href="#videos" role="tab" data-toggle="tab">Videos</a></li>
-                    <li role="presentation"><a href="#support" role="tab" data-toggle="tab">Support</a></li>
                     <li role="presentation"><a href="#quizz" role="tab" data-toggle="tab">Quizz</a></li>
                     <li role="presentation"><a href="#forum" role="tab" data-toggle="tab">Forum</a></li>
                 </ul>
@@ -22,22 +21,15 @@
                     <div class="tab-pane" id="files">
                         {{>uploadCourseTpl}}
                     </div>
-                    <div class="tab-pane" id="videos">
-                        <h1>Videos</h1>
-                    </div>
-                    <div class="tab-pane" id="support">
-                        <h1>Support</h1>
-                    </div>
                     <div class="tab-pane" id="quizz">
-                        <a href="{{urlFor route='quizz.create' idCourse=idCourse}}" class="btn btn-primary">create Quizz</a>
+                        <a href="{{urlFor route='quizz.create' idCourse=idCourse}}" class="btn btn-primary">Create
+                            uizz</a>
                     </div>
                     <div class="tab-pane" id="forum">
                         <a href="{{urlFor route='forum.create' idCourse=idCourse}}" class="btn btn-primary">Forum</a>
                         {{>forumListTpl}}
-
                     </div>
                 </div>
-
             </div>
         {{else}}
             <h1>Not found</h1>

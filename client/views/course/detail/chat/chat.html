@@ -1,16 +1,18 @@
 <template name="chatCourseTpl">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            {{#each messages}}
-                <div style="{{#if me userId}}color:grey{{/if}}">
-                    <strong>{{userId}}</strong> : {{body}}
-                    <span class="pull-right">{{date}}</span>
-                </div>
-            {{/each}}
+    {{#if true}}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {{#each messages}}
+                    <div style="{{#if me userId}}color:grey{{/if}}">
+                        <strong>{{userId}}</strong> : {{body}}
+                        <span class="pull-right">{{date}}</span>
+                    </div>
+                {{/each}}
+            </div>
         </div>
-    </div>
+    {{/if}}
     <form>
-        <input class="form-control" name="body" title="body"/>
+        <input class="form-control" placeholder="Ur message" name="body" title="body"/>
     </form>
 </template>
 

@@ -1,5 +1,7 @@
 <template name="conferenceListTpl">
     <div class="container">
+        <a class="btn btn-success" href="/conference/create">Propose a conference</a>
+        <hr>
         {{#each conferences}}
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -7,7 +9,7 @@
                 </div>
                 <div class="panel-body">
                     <p>{{description}}</p>
-                    <p>{{createdAt}}</p>
+                    <p>{{createDate createdAt}}</p>
                     <p>{{userId}}</p>
                     <a href="{{urlFor route='conference.view' _id=_id}}" class="pull-right btn btn-primary">view</a>
                 </div>

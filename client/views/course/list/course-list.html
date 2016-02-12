@@ -1,5 +1,7 @@
 <template name="courseListTpl">
     <div class="container">
+        <a class="btn btn-success" href="/course/create">Propose a course</a>
+        <hr>
         <ul class="nav nav-tabs">
             <li role="presentation"><a id="allCourses" role="tab" data-toggle="tab">All</a></li>
             <li role="presentation"><a id="myCourses" role="tab" data-toggle="tab">Participate</a></li>
@@ -12,7 +14,7 @@
                 </div>
                 <div class="panel-body">
                     <p>{{description}}</p>
-                    <p>{{createdAt}}</p>
+                    <p>{{createDate createdAt}}</p>
                     <p>{{userId}}</p>
                     <div class="btn-group pull-right">
                         <a href="{{urlFor route='course.view' _id=_id}}" class="btn btn-primary">view</a>
