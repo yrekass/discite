@@ -12,6 +12,7 @@
                     <li role="presentation"><a href="#videos" role="tab" data-toggle="tab">Videos</a></li>
                     <li role="presentation"><a href="#support" role="tab" data-toggle="tab">Support</a></li>
                     <li role="presentation"><a href="#quizz" role="tab" data-toggle="tab">Quizz</a></li>
+                    <li role="presentation"><a href="#forum" role="tab" data-toggle="tab">Forum</a></li>
                 </ul>
                 <div class="tab-content">
                     <br>
@@ -29,6 +30,11 @@
                     </div>
                     <div class="tab-pane" id="quizz">
                         <a href="{{urlFor route='quizz.create' idCourse=idCourse}}" class="btn btn-primary">create Quizz</a>
+                    </div>
+                    <div class="tab-pane" id="forum">
+                        <a href="{{urlFor route='forum.create' idCourse=idCourse}}" class="btn btn-primary">Forum</a>
+                        {{>forumListTpl}}
+
                     </div>
                 </div>
 

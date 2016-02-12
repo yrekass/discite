@@ -13,7 +13,7 @@ Template.uploadCourseTpl.events({
                 courseId: Router.current().params._id
             };
             Files.insert(newFile, function (err, fileObj) {
-                // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
+                console.log(newFile );
             });
         });
     }

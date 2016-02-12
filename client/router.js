@@ -66,3 +66,28 @@ Router.route('/quizz/:_id', function () {
 }, {
     name: 'quizz.view'
 });
+
+Router.route('/forum/create/:idCourse', function () {
+    this.render('forumCreateTpl');
+} , {
+        name: 'forum.create'
+});
+
+Router.route('/forum/list/', function () {
+    this.render('forumListTpl');
+});
+
+Router.route('/forum/:_id', function () {
+    var forum = Forums.findOne({_id: this.params._id});
+    this.render('messageForumTpl', {data: forum});
+}, {
+    name: 'forum.view'
+});
+/*
+Router.route('/forum/:_id', function () {
+    var forum = Forum.findOne({_id: this.params._id});
+    this.render('courseTpl', {data: course});
+}, {
+    name: 'course.view'
+});
+    */

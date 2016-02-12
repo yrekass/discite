@@ -1,0 +1,12 @@
+<template name="forumListTpl">
+    <div class="container">
+        {{#each forums}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="{{urlFor route='forum.view' _id=_id}}">
+                    <h3 class="panel-title">{{name}}| {{createdAt}}| posted by :{{userId}}</h3></a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</template>
