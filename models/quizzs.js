@@ -19,6 +19,9 @@ Schemas.quizz = new SimpleSchema({
     userId:{
         type:String
     },
+    courseId:{
+        type: String
+    },
     duration:{
        type:Number
     },

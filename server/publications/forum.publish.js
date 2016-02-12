@@ -2,14 +2,14 @@
  * Created by Youness on 04/02/2016.
  */
 
-Meteor.publish('forums', () => {
-    console.log("la liste des forum");
-    return Forums.find({});
+Meteor.publish('forum', (_id) => {
+    console.log("la liste des forums");
+    return Forums.find({_id});
 });
 
-Meteor.publish('forum', (_id) => {
+Meteor.publish('forums', (courseId) => {
     console.log("forum finded!!");
-    return Forums.find({_id});
+    return Forums.find({courseId});
 });
 
 

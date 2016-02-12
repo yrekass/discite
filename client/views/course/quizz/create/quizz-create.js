@@ -1,8 +1,8 @@
 /**
- * Created by Youness on 10/02/2016.
+ * Created by Youness on 12/02/2016.
  */
 
-Template.forumCreateTpl.rendered = function(){
+Template.quizzCreateTpl.rendered = function(){
     const hookObj = {
         before: {
             insert: function (doc) {
@@ -12,5 +12,5 @@ Template.forumCreateTpl.rendered = function(){
         }
     };
 
-    AutoForm.addHooks('insertForumForm', hookObj, true)
+    AutoForm.addHooks('insertQuizzForm', hookObj, true)
 };

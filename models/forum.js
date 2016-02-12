@@ -8,7 +8,11 @@ Forums.before.insert(function (userId, forum) {
     forum.userId = Meteor.userId();
     forum.createdAt = new Date();
 });
-
+if (Meteor.isClient) {
+    Forums.after.insert(()=> {
+        Router.go('/forum/list');
+    });
+}
 Schemas.forum = new SimpleSchema({
     name: {
         type: String,
@@ -19,6 +23,9 @@ Schemas.forum = new SimpleSchema({
         type: String,
         label: 'Description',
         max: 500
+    },
+    courseId:{
+        type: String
     },
     userId: {
         type: String
@@ -52,6 +59,9 @@ Schemas.forum = new SimpleSchema({
     },
     'reponses.$.date': {
         type: Date
-    }
+    },
+    'reponses.$.date': {
+    type: Date
+}
 });
 Forums.attachSchema(Schemas.forum);
