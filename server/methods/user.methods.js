@@ -1,3 +1,5 @@
+'use strict';
+
 Meteor.methods({
     /**
      * Get my profile

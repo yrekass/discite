@@ -1,3 +1,8 @@
+'use strict';
+/*global Courses:true*/
+/*global Conferences:true*/
+/*global Quizzs:true*/
+/*global Forums:true*/
 /**
  * Client routing
  */
@@ -71,11 +76,3 @@ Router.route('/forum/:_id', function () {
 }, {
     name: 'forum.view'
 });
-/*
-Router.route('/forum/:_id', function () {
-    var forum = Forum.findOne({_id: this.params._id});
-    this.render('courseTpl', {data: course});
-}, {
-    name: 'course.view'
-});
-    */

@@ -1,3 +1,5 @@
+'use strict';
+/*global Quizzs:true*/
 /**
  * Created by Youness on 28/01/2016.
  */

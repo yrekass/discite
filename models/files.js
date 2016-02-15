@@ -1,3 +1,6 @@
+/*jshint strict:false */
+/*global Files:true*/
+
 /**
  * Global files collection
  * @type {FS.Collection}

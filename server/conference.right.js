@@ -1,3 +1,6 @@
+'use strict';
+/*global Conferences:true*/
+
 /**
  * Collections conferences actions rigths
  */

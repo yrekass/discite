@@ -1,6 +1,4 @@
-/**
- * Created by Youness on 12/02/2016.
- */
+'use strict';
 
 Template.quizzCreateTpl.rendered = function(){
     const hookObj = {
@@ -12,5 +10,5 @@ Template.quizzCreateTpl.rendered = function(){
         }
     };
 
-    AutoForm.addHooks('insertQuizzForm', hookObj, true)
+    AutoForm.addHooks('insertQuizzForm', hookObj, true);
 };

@@ -1,3 +1,5 @@
+'use strict';
+/*global Files:true*/
 /**
  * Collections files actions rigths
  */

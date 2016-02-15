@@ -1,6 +1,13 @@
+/*jshint strict:false */
+/*global Quizzs:true*/
+/*global CoursesSubsManager:true*/
+/*global Schemas:true*/
+
 Quizzs = new Mongo.Collection('quizzs');
 CoursesSubsManager = new SubsManager();
+
 Quizzs.before.insert(function (userId, quizz) {
+    'use strict';
     quizz.userId = Meteor.userId();
     quizz.createdAt = new Date();
 });
@@ -8,6 +15,7 @@ Quizzs.before.insert(function (userId, quizz) {
 
 if (Meteor.isClient) {
     Quizzs.after.insert(()=> {
+        'use strict';
         Router.go('/quizz/list');
     });
 }

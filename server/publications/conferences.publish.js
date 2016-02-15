@@ -1,3 +1,5 @@
+'use strict';
+/*global Conferences:true*/
 /**
  * Publish all conferences 
  * Must subscribe in client for access

@@ -1,3 +1,6 @@
+'use strict';
+/*global Courses:true*/
+
 /**
  * Publish all courses
  * Must subscribe in client for access

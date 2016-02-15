@@ -1,3 +1,7 @@
+'use strict';
+/*global Courses:true*/
+/*global CoursesSubsManager:true*/
+
 Template.courseListTpl.helpers({
     /**
      * Return list of course, context subscribe

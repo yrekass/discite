@@ -1,3 +1,6 @@
+'use strict';
+/*global Quizzs:true*/
+
 Template.quizzTpl.rendered = function () {
     Meteor.subscribe('quizz', Router.current().params._id);
 };
@@ -8,15 +11,11 @@ Template.quizzTpl.helpers({
     },
 
     questions: function(){
-
-        var el = Quizzs.findOne({_id: Router.current().params._id});
-        return el.quizz ;
+        return Quizzs.findOne({_id: Router.current().params._id});
     },
 
     //  faut récuper la question et les choix tous possibles
     answersBody: function(){
-        var el = Quizzs.findOne({_id: Router.current().params._id}) ;
-        console.log(el);
-        return el.quizz.answers;
+        return Quizzs.findOne({_id: Router.current().params._id}) ;
     }
 });

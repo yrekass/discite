@@ -1,15 +1,17 @@
-/**
- * Created by Youness on 04/02/2016.
- */
+/*jshint strict:false */
+/*global Forums:true*/
+/*global Schemas:true*/
 
 Forums = new Mongo.Collection('forums');
 
 Forums.before.insert(function (userId, forum) {
+    'use strict';
     forum.userId = Meteor.userId();
     forum.createdAt = new Date();
 });
 if (Meteor.isClient) {
     Forums.after.insert(()=> {
+        'use strict';
         Router.go('/forum/list');
     });
 }
@@ -59,9 +61,6 @@ Schemas.forum = new SimpleSchema({
     },
     'reponses.$.date': {
         type: Date
-    },
-    'reponses.$.date': {
-    type: Date
-}
+    }
 });
 Forums.attachSchema(Schemas.forum);

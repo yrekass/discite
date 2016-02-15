@@ -1,3 +1,5 @@
+'use strict';
+/*global Courses:true*/
 /**
  * Collections courses actions rigths
  */

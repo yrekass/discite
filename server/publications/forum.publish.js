@@ -1,6 +1,5 @@
-/**
- * Created by Youness on 04/02/2016.
- */
+'use strict';
+/*global Forums:true*/
 
 Meteor.publish('forum', (_id) => {
     console.log("la liste des forums");

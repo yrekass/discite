@@ -1,3 +1,4 @@
+'use strict';
 const MESSAGE_TEXT = 'text';
 
 Template.chatCourseTpl.events({

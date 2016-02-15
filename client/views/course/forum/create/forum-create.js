@@ -1,6 +1,4 @@
-/**
- * Created by Youness on 10/02/2016.
- */
+'use strict';
 
 Template.forumCreateTpl.rendered = function(){
     const hookObj = {
@@ -12,5 +10,5 @@ Template.forumCreateTpl.rendered = function(){
         }
     };
 
-    AutoForm.addHooks('insertForumForm', hookObj, true)
+    AutoForm.addHooks('insertForumForm', hookObj, true);
 };

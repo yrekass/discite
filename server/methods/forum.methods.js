@@ -1,6 +1,6 @@
-/**
- * Created by Youness on 05/02/2016.
- */
+'use strict';
+/*global Forums:true*/
+
 const FORUM_FILE = 'file';
 const FORUM_TEXT = 'text';
 const FORUM_IMAGE_FILE = 'image_file';
@@ -22,7 +22,7 @@ Meteor.methods({
             reponse.type = extra.type;
         }
         // TODO: Refactoring
-        if (collection == 'forums') {
+        if (collection === 'forums') {
             Forums.update({_id: id}, {$push: {reponses: reponse}});
         }
     }

@@ -1,3 +1,6 @@
+'use strict';
+/*global Files:true*/
+
 const MESSAGE_FILE = 'file';
 const MESSAGE_TEXT = 'text';
 const MESSAGE_IMAGE_FILE = 'image_file';
@@ -23,7 +26,7 @@ Template.chatConferenceTpl.events({
         Meteor.call('sendMessage', userId, body, extra, 'conferences');
         form.find('[name=body]').val('');
     },
-    'change #fileInput': function(event, template) {
+    'change #fileInput': function(event) {
         FS.Utility.eachFile(event, function(file) {
             var newFile = new FS.File(file);
             newFile.metadata = {
@@ -32,22 +35,23 @@ Template.chatConferenceTpl.events({
 
             Files.insert(newFile, function (err, fileObj) {
                 console.log(fileObj.url({brokenIsFine: true}));
-                if(err)
-                {
+                if(err) {
                     // TODO Do something
+                    console.log(err);
                 }
                 else {
+                    var extra;
                     var body = fileObj.original.name;
                     console.log(fileObj.type().indexOf('image'));
                     if (fileObj.type().indexOf('image') !== -1) {
-                        var extra = {
+                        extra = {
                             type: MESSAGE_IMAGE_FILE,
                             fileURL: fileObj.url({brokenIsFine: true}),
                             fileName: fileObj.original.name
                         };
                     }
                     else {
-                        var extra = {
+                        extra = {
                             type: MESSAGE_FILE,
                             fileURL: fileObj.url({brokenIsFine: true}),
                             fileName: fileObj.original.name

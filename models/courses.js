@@ -1,3 +1,8 @@
+/*jshint strict:false */
+/*global Courses:true*/
+/*global CoursesSubsManager:true*/
+/*global Schemas:true*/
+
 /**
  * Global courses collection
  * @type {FS.Collection}
@@ -14,6 +19,7 @@ CoursesSubsManager = new SubsManager();
  * Add fields before insert in collection
  */
 Courses.before.insert(function (userId, course) {
+    'use strict';
     course.userId = Meteor.userId();
     course.createdAt = new Date();
 });
@@ -24,6 +30,7 @@ Courses.before.insert(function (userId, course) {
  */
 if (Meteor.isClient) {
     Courses.after.insert(()=> {
+        'use strict';
         Router.go('/course/list');
     });
 }

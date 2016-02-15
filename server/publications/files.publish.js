@@ -1,3 +1,6 @@
+'use strict';
+/*global Files:true*/
+
 /**
  * Publish all files linked with a course
  * Must subscribe in client for access

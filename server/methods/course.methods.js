@@ -1,3 +1,6 @@
+'use strict';
+/*global Courses:true*/
+
 Meteor.methods({
     /**
      * A user can join a course
@@ -5,6 +8,6 @@ Meteor.methods({
      */
     participate: function (_id) {
         var participant = Meteor.userId();
-        Courses.update({_id}, {$push: {participants: participant}})
+        Courses.update({_id}, {$push: {participants: participant}});
     }
 });

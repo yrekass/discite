@@ -1,3 +1,7 @@
+'use strict';
+/*global Courses:true*/
+/*global Conferences:true*/
+
 const MESSAGE_FILE = 'file';
 const MESSAGE_TEXT = 'text';
 const MESSAGE_IMAGE_FILE = 'image_file';
@@ -24,10 +28,10 @@ Meteor.methods({
             message.type = extra.type;
         }
         // TODO: Refactoring
-        if (collection == 'courses') {
+        if (collection === 'courses') {
             Courses.update({_id: id}, {$push: {messages: message}});
         }
-        if (collection == 'conferences') {
+        if (collection === 'conferences') {
             Conferences.update({_id: id}, {$push: {messages: message}});
         }
     }

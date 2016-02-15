@@ -1,3 +1,5 @@
+'use strict';
+/*global Meteor:true*/
 /**
  * Insert a default user in database
  */

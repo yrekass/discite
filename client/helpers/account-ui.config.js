@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Extend account ui for signin
  */

@@ -1,3 +1,6 @@
+'use strict';
+/*global Quizzs:true*/
+
 Meteor.publish('quizzs', () => {
     return Quizzs.find({});
 });
