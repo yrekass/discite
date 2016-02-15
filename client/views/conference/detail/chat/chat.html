@@ -4,9 +4,9 @@
             <div class="panel-body">
                 {{#each messages}}
                     {{#if isTextMessage type}}
-                    <div style="{{#if me userId}}color:grey{{/if}}">
-                        <strong>{{userId}}</strong> : {{body}}
-                    </div>
+                        <div style="{{#if me userId}}color:grey{{/if}}">
+                            <strong>{{userId}}</strong> : {{body}}
+                        </div>
                     {{/if}}
                     {{#if isFileMessage type}}
                         <div style="{{#if me userId}}color:grey{{/if}}">
@@ -24,17 +24,16 @@
         </div>
         <form>
             <div>
-                <input class="col-md-10 form-control" name="body" title="body"/>
-                <div class="fileArea">
-                    {{#each uploadedFiles}}
-                        {{> uploadedFile}}
-                    {{/each}}
+                <div class="input-group">
+                    <input class="form-control" name="body" title="body"/>
+                    <input id="fileInput" style="display: none" type="file" multiple=""
+                           name="fileInput">
+                    <label for="fileInput" class="input-group-btn">
+                        <span class="btn btn-default">
+                            +
+                        </span>
+                    </label>
                 </div>
-
-                <input id="fileInput" class="inputfile inputfile-1" type="file" multiple="" name="fileInput">
-                <label for="fileInput">
-                    +
-                </label>
             </div>
         </form>
     </div>

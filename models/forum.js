@@ -9,6 +9,7 @@ Forums.before.insert(function (userId, forum) {
     forum.userId = Meteor.userId();
     forum.createdAt = new Date();
 });
+
 if (Meteor.isClient) {
     Forums.after.insert(()=> {
         'use strict';

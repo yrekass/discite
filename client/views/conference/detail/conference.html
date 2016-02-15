@@ -1,5 +1,11 @@
 <template name="conferenceTpl">
     <div class="container conference">
+        {{#if isMine userId}}
+            <button id='launch' class="pull-right btn btn-primary">Launch conference</button>
+        {{else}}
+            <button id='participate' class="pull-right btn btn-primary">Participate conference</button>
+        {{/if}}
+        <br>
         <div class="center">
             <h3>{{name}}</h3>
             <p>{{description}}</p>
@@ -13,11 +19,6 @@
                 </div>
             </div>
             <div class="right col-md-4">
-                {{#if isMine userId}}
-                    <button id='launch' class="btn btn-block btn-primary">Launch conference</button>
-                {{else}}
-                    <button id='participate' class="btn btn-block btn-primary">Participate conference</button>
-                {{/if}}
                 {{>chatConferenceTpl}}
             </div>
         </div>
