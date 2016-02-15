@@ -6,7 +6,6 @@
 
 Forums.allow({
     insert: (userId) => {
-        console.log('Forum creeted !!');
         return !!userId;
     },
     update: (userId) => {

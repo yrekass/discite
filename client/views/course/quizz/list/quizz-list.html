@@ -1,5 +1,8 @@
 <template name="quizzListTpl">
     <div class="container">
+        <a href="{{urlFor route='quizz.create' idCourse=idCourse}}" class="btn btn-primary">Create
+            quizz</a>
+        <hr>
         {{#each quizzs}}
             <div class="panel panel-default">
                 <div class="panel-body">

@@ -2,7 +2,9 @@
 /**
  * Handlebars helper to display username
  */
-Handlebars.registerHelper('username', (user) => {
+Handlebars.registerHelper('username', (userId) => {
+    Meteor.subscribe('user', userId);
+    const user = Meteor.users.findOne({_id: userId});
     if (!user) {
         return;
     }
@@ -17,4 +19,8 @@ Handlebars.registerHelper('username', (user) => {
             return;
         }
     }
+});
+
+Handlebars.registerHelper('fromNow', (date) => {
+        return moment(date).fromNow();
 });

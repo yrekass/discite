@@ -23,10 +23,6 @@ Template.courseListTpl.helpers({
         } else {
             return course.participants.indexOf(me) === -1;
         }
-    },
-    createDate: function(date){
-        console.log(date);
-        return moment(date).fromNow();
     }
 });
 

@@ -12,7 +12,7 @@ Forums.before.insert(function (userId, forum) {
 if (Meteor.isClient) {
     Forums.after.insert(()=> {
         'use strict';
-        Router.go('/forum/list');
+        Router.go('/course/' + Router.current().params.idCourse);
     });
 }
 Schemas.forum = new SimpleSchema({

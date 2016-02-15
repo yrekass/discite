@@ -4,8 +4,8 @@
             <div class="panel-body">
                 {{#each messages}}
                     <div style="{{#if me userId}}color:grey{{/if}}">
-                        <strong>{{userId}}</strong> : {{body}}
-                        <span class="pull-right">{{date}}</span>
+                        <strong>{{username userId}}</strong> : {{body}}
+                        <span class="pull-right">{{fromNow date}}</span>
                     </div>
                 {{/each}}
             </div>

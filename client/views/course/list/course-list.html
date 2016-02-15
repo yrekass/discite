@@ -14,8 +14,8 @@
                 </div>
                 <div class="panel-body">
                     <p>{{description}}</p>
-                    <p>{{createDate createdAt}}</p>
-                    <p>{{userId}}</p>
+                    <p>{{fromNow createdAt}}</p>
+                    <p>{{username userId}}</p>
                     <div class="btn-group pull-right">
                         <a href="{{urlFor route='course.view' _id=_id}}" class="btn btn-primary">view</a>
                         {{#if displayBtnParticipate id=_id}}

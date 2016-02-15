@@ -9,8 +9,8 @@
                 </div>
                 <div class="panel-body">
                     <p>{{description}}</p>
-                    <p>{{createDate createdAt}}</p>
-                    <p>{{userId}}</p>
+                    <p>{{fromNow createdAt}}</p>
+                    <p>{{username userId}}</p>
                     <a href="{{urlFor route='conference.view' _id=_id}}" class="pull-right btn btn-primary">view</a>
                 </div>
             </div>

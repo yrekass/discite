@@ -22,12 +22,10 @@
                         {{>uploadCourseTpl}}
                     </div>
                     <div class="tab-pane" id="quizz">
-                        <a href="{{urlFor route='quizz.create' idCourse=idCourse}}" class="btn btn-primary">Create
-                            uizz</a>
+                            {{> quizzListTpl}}
                     </div>
                     <div class="tab-pane" id="forum">
-                        <a href="{{urlFor route='forum.create' idCourse=idCourse}}" class="btn btn-primary">Forum</a>
-                        {{>forumListTpl}}
+                          {{>forumListTpl}}
                     </div>
                 </div>
             </div>

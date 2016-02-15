@@ -93,7 +93,7 @@ Template.messageForumTpl.helpers({
         var response = Forums.findOne({_id: Router.current().params._id});
         console.log('voici la reponse', response);
         return response.reponses;
-    },
+    }
 });
 /*
  Template.messageForumTpl.events({
