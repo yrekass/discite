@@ -1,5 +1,8 @@
 #discite
 
+[![bitHound Overall Score](https://www.bithound.io/github/Jermorin/discite/badges/score.svg)](https://www.bithound.io/github/Jermorin/discite)
+[![bitHound Code](https://www.bithound.io/github/Jermorin/discite/badges/code.svg)](https://www.bithound.io/github/Jermorin/discite)
+
 E-learning platform poc in meteor.
 
 ##stack
