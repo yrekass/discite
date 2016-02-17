@@ -2,6 +2,7 @@
 Template.courseTpl.rendered = function () {
     //subscribe one course
     Meteor.subscribe('course', Router.current().params._id);
+    Meteor.subscribe('conferences', Router.current().params._id);
     //select the first tab
     setTimeout(function () {
         $('#first').tab('show');

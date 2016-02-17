@@ -40,6 +40,10 @@ Schemas.conference = new SimpleSchema({
         label: 'Name',
         max: 200
     },
+    courseId: {
+        type: String,
+        optional: true
+    },
     description: {
         type: String,
         label: 'Description',

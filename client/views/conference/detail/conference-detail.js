@@ -1,5 +1,19 @@
 'use strict';
 /*global RTCMultiConnection:true*/
+/*global Courses:true*/
+
+/**
+ *  Gestion des conférences (live stream)
+ *  Utilisation de RTCMulticonnection
+**/
+
+
+/**
+ * Append stream to the selected div
+ * @param event
+ * @param selector
+ * @param template
+ */
 function appendStream(event, selector, template) {
     if (!template.find('#' + selector + ' video')) {
         var div = template.find('#' + selector);
@@ -7,7 +21,22 @@ function appendStream(event, selector, template) {
     }
 }
 
-Template.conferenceTpl.rendered = function () {
+Template.conferenceDetailTpl.rendered = function () {
+   /* if (!chrome.app.isInstalled) {
+        chrome.webstore.install('https://chrome.google.com/webstore/detail/screen-capturing/ajhifddimkapgcifgcodmmfdlknahffk/reviews?utm_source=chrome-app-launcher-info-dialog',
+            successCallback, failureCallback);
+    }*/
+
+    if (Session.get("courseId") !== undefined && Session.get("courseId") !== "")
+    {
+        Meteor.subscribe('courses');
+        var course = Courses.findOne({_id: Session.get("courseId")});
+        if (course.participants.indexOf(Meteor.userId()) === -1) {
+            Router.go('/conference/list/');
+        }
+    }
+
+
     Meteor.subscribe('conference', Router.current().params._id);
     var params = {
         MODERATOR_CAM_CHANNEL_ID: Router.current().params._id + 'CAM',
@@ -31,13 +60,23 @@ Template.conferenceTpl.rendered = function () {
     Session.set('paramsRtc', params);
 };
 
-Template.conferenceTpl.helpers({
+
+Template.conferenceDetailTpl.helpers({
     isMine: function (ownerId) {
         return Meteor.userId() === ownerId;
+    },
+    getCourseId: function () {
+        if (Router.current().params._id) {
+            return Router.current().params._id;
+        }
+        else {
+            return "";
+        }
     }
 });
 
-Template.conferenceTpl.events({
+
+Template.conferenceDetailTpl.events({
     'click #launch': function (e, t) {
         var params = Session.get('paramsRtc');
         var moderatorCam = new RTCMultiConnection(params.MODERATOR_CAM_CHANNEL_ID);

@@ -1,5 +1,5 @@
 <template name="conferenceCreateTpl">
-    <div class="container">
-        {{>quickForm collection="Conferences" id="insertConferenceForm" type="insert" omitFields="userId,createdAt,messages"}}
+    <div class="{{#if isNotCourseContext }}container{{/if}}">
+        {{>quickForm collection="Conferences" id="insertConferenceForm" type="insert" omitFields="userId,courseId,createdAt,messages"}}
     </div>
 </template>
