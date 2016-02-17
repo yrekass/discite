@@ -1,5 +1,12 @@
 <template name="conferenceListTpl">
-    <div class="container">
+    <div class="{{#if isNotCourseContext }}container{{/if}}" >
+        {{#if isCourseContext }}
+            {{#if countConferenceByCourse = 0}}
+                <div >
+                    <a href="#conference-create" class="pull-right btn btn-primary">Create first conference</a>
+                </div>
+            {{/if}}
+        {{/if}}
         <a class="btn btn-success" href="/conference/create">Propose a conference</a>
         <hr>
         {{#each conferences}}

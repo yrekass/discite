@@ -4,9 +4,9 @@
             <div class="panel-body">
                 {{#each messages}}
                     {{#if isTextMessage type}}
-                        <div style="{{#if me userId}}color:grey{{/if}}">
-                            <strong>{{userId}}</strong> : {{body}}
-                        </div>
+                    <div style="{{#if me userId}}color:grey{{/if}}">
+                        <strong>{{userId}}</strong> : {{body}}
+                    </div>
                     {{/if}}
                     {{#if isFileMessage type}}
                         <div style="{{#if me userId}}color:grey{{/if}}">
@@ -16,7 +16,7 @@
                     {{#if isImageFileMessage type}}
                         <div style="{{#if me userId}}color:grey{{/if}}">
                             <strong>{{userId}}</strong>:
-                            <a href="{{fileURL}}" target="_blank">{{fileName}}</a>
+                            <a href="{{fileURL}}" target="_blank"><img src="{{fileURL}}" alt="{{fileName}}" title="{{fileName}}"/></a>
                         </div>
                     {{/if}}
                 {{/each}}

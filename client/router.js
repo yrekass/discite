@@ -36,9 +36,13 @@ Router.route('/conference/create/', function () {
     this.render('conferenceCreateTpl');
 });
 
+Router.route('/conference/', function () {
+    this.render('conferenceTpl');
+});
+
 Router.route('/conference/:_id', function () {
     var conference = Conferences.findOne({_id: this.params._id});
-    this.render('conferenceTpl', {data: conference});
+    this.render('conferenceDetailTpl', {data: conference});
 }, {
     name: 'conference.view'
 });
