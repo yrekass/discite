@@ -1,18 +1,17 @@
 <template name="conferenceTpl">
-    <div  class="{{#if isNotCourseContext }}container{{/if}}" >
-        <div class="col-md-{{#if isNotCourseContext }}8{{else}}12{{/if}}">
-            <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a id="first" href="#conference-list" role="tab" data-toggle="tab">List</a></li>
-                <li role="presentation"><a href="#conference-create" role="tab" data-toggle="tab">Create</a></li>
-            </ul>
-            <div class="tab-content">
-                <br>
-                <div class="tab-pane active" id="conference-list">
-                    {{>conferenceListTpl}}
-                </div>
-                <div class="tab-pane" id="conference-create">
-                    {{>conferenceCreateTpl}}
-                </div>
+    <div class="{{#if isCourseContext}} {{else}}container{{/if}}">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a id="first" href="#conference-list" role="tab" data-toggle="tab">List</a>
+            </li>
+            <li role="presentation"><a href="#conference-create" role="tab" data-toggle="tab">Create</a></li>
+        </ul>
+        <div class="tab-content">
+            <br>
+            <div class="tab-pane active" id="conference-list">
+                {{>conferenceListTpl}}
+            </div>
+            <div class="tab-pane" id="conference-create">
+                {{>conferenceCreateTpl}}
             </div>
         </div>
     </div>

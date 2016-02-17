@@ -11,7 +11,6 @@ Template.messageForumTpl.rendered = function () {
     Meteor.subscribe('forum', Router.current().params._id);
     Tracker.afterFlush(function () {
         var $panelBody = $('.panel-body:first-child');
-        console.log($panelBody.prop('scrollHeight'));
         $panelBody.scrollTop = $panelBody.prop('scrollHeight');
     });
 };
@@ -89,56 +88,7 @@ Template.messageForumTpl.helpers({
         return Files.find();
     },
     forumMessages: function () {
-        console.log('voici la reponse', Router.current().params._id);
         var response = Forums.findOne({_id: Router.current().params._id});
-        console.log('voici la reponse', response);
         return response.reponses;
     }
 });
-/*
- Template.messageForumTpl.events({
- 'submit form': function (event) {
- event.preventDefault();
- const form = $(event.target);
- const body = form.find('[name=body]').val();
- const forumID = Router.current().params._id;
- const extra = {
- type: MESSAGE_TEXT
- };
-
- console.log("message updated");
- Meteor.call('sendForumMessage', forumID, body, extra, 'forums');
- form.find('[name=body]').val('');
- },
- 'change #fileInput': function (event, template) {
- FS.Utility.eachFile(event, function (file) {
- var newFile = new FS.File(file);
- newFile.metadata = {
- forumId: Router.current().params._id
- };
- Files.insert(newFile, function (err, fileObj) {
- console.log('file uploader!!');
- });
- });
- }
- });
-
-
- Template.messageForumTpl.rendered = function () {
- Meteor.subscribe('forum', Router.current().params._id);
- };
-
- Template.messageForumTpl.helpers({
- forumMessages: function () {
- var response = Forums.findOne({_id: Router.current().params._id});
- return response.reponses;
- },
- uploadedFiles: function(){
- var file=Files.findOne({_id: Router.current().params._id});
- console.log('recherche fichier',file);
- return Files.find();
- }
-
- });
-
- */
