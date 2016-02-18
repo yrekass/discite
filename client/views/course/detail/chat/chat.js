@@ -19,5 +19,10 @@ Template.chatCourseTpl.events({
 Template.chatCourseTpl.helpers({
     me: function (userId) {
         return userId === Meteor.userId();
+    },
+    avatar:function(){
+        var userName=Meteor.user().username;
+        console.log('le nom ',userName);
+        return userName.charAt(0).toUpperCase()
     }
 });

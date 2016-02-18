@@ -1,4 +1,4 @@
-<template name="quizzTpl">
+    <template name="quizzTpl">
     <div class="container">
         <h4>Attention vous avez {{duration}} min</h4>
         <div class="panel panel-default">
@@ -18,8 +18,22 @@
                 {{/each}}
             </div>
 
-            <button type="submit" class="btn btn-primary">Valider</button>
+            <button type="submit" class="btn btn-primary"  data-toggle="modal" data-target="#myModal">Valider</button>
         </form>
+
         <h1 class="note"></h1>
     </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">{{name}}</h4>
+                    </div>
+                    <div class="modal-body">
+                       votre score :<h1 class="note"></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
 </template>

@@ -1,18 +1,46 @@
 <template name="chatCourseTpl">
-    {{#if true}}
         <div class="panel panel-default">
-            <div class="panel-body">
-                {{#each messages}}
-                    <div style="{{#if me userId}}color:grey{{/if}}">
-                        <strong>{{username userId}}</strong> : {{body}}
-                        <span class="pull-right">{{fromNow date}}</span>
-                    </div>
-                {{/each}}
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-comment"></span>
             </div>
+            <form>
+                        {{#if true}}
+                            <div class="panel-body">
+                                <ul class="media-list">
+                                    {{#each messages}}
+                                        <li class="media">
+                                            <div class="media-body">
+                                                <div class="media">
+                                                    <a class="pull-left" href="#">
+                                                        <img src="http://placehold.it/50/55C1E7/fff&amp;text={{avatar}}"
+                                                             alt="User Avatar" class="img-circle">
+                                                    </a>
+                                                    <div class="media-body">
+                                                        {{body}}
+                                                        <br/>
+                                                        <small class="text-muted">{{username userId}}
+                                                            | {{fromNow date}}</small>
+                                                        <hr/>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="input-group">
+                                    <input class="form-control input-sm" placeholder="Ur message" name="body"
+                                           title="body"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-info" type="button">SEND</button>
+                                    </span>
+                                </div>
+                            </div>
+                        {{/if}}
+
+            </form>
         </div>
-    {{/if}}
-    <form>
-        <input class="form-control" placeholder="Ur message" name="body" title="body"/>
-    </form>
 </template>
 
