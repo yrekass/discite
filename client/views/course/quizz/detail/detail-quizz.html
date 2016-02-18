@@ -1,17 +1,25 @@
-<template name="quizzTpl" xmlns="http://www.w3.org/1999/html">
+<template name="quizzTpl">
     <div class="container">
         <h4>Attention vous avez {{duration}} min</h4>
         <div class="panel panel-default">
             <h4>{{name}}</h4>
         </div>
-        {{#each questions}}
-            <h5>{{question}}</h5>
-            {{#each answers}}
-                <div class="checkbox">
-                    <label><input type="checkbox" value="">{{body}}</label>
-                </div>
-            {{/each}}
-        {{/each}}
-        <button type="button" class="btn btn-primary">Valider</button>
+        <form>
+            <div class="checkboxes">
+                {{#each quizz}}
+                    <h5>{{question}}</h5>
+
+                    {{#each answers}}
+                        <div class="checkbox">
+                            <label><input name="{{body}}" type="checkbox"> {{body}}</label>
+                        </div>
+                    {{/each}}
+
+                {{/each}}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Valider</button>
+        </form>
+        <h1 class="note"></h1>
     </div>
 </template>

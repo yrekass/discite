@@ -58,7 +58,8 @@ Router.route('/quizz/list/', function () {
 });
 
 Router.route('/quizz/:_id', function () {
-    var quizz = Quizzs.findOne({_id: this.params._id});
+    Meteor.subscribe('quizz', Router.current().params._id);
+    const quizz = Quizzs.findOne({_id: this.params._id});
     this.render('quizzTpl', {data: quizz});
 }, {
     name: 'quizz.view'

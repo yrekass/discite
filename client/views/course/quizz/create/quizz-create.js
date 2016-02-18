@@ -9,6 +9,6 @@ Template.quizzCreateTpl.rendered = function(){
             }
         }
     };
-
+    
     AutoForm.addHooks('insertQuizzForm', hookObj, true);
 };
